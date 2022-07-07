@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Weather</string>
+    <string name="rationale_title">Location Permissions Missing</string>
+    <string name="rationale_message">In order for this application to function it requires accessing this device location, please grant the permission to do so.</string>
+    <string name="rationale_positive_button">Grant Permissions</string>
+    <string name="rationale_negative_button">Close App</string>
+    <string name="update_location">Update Location</string>
+    <string name="temperature_template">%d°C</string>
+    <string name="details_template">%d°C, %s</string>
+    <string name="other_locations">Other Locations</string>
+    <string name="no_internet">Internet unavailable, showing cached data.</string>
+    <string name="no_internet_dialog_title">Device Is Offline</string>
+    <string name="no_internet_dialog_msg">This feature cannot work offline, please check your internet connection.</string>
+    <string name="ok">OK</string>
+</resources>
