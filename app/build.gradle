@@ -7,6 +7,16 @@ plugins {
 android {
     compileSdk 32
 
+    signingConfigs {
+
+        release {
+            storeFile file("key.keystore")
+            storePassword "123456"
+            keyAlias "key"
+            keyPassword "123456"
+        }
+    }
+
     defaultConfig {
         applicationId "com.giniapps.weather"
         minSdk 21
