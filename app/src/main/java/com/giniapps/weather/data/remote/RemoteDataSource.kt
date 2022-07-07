@@ -1,6 +1,7 @@
 package com.giniapps.weather.data.remote
 
 import android.content.Context
+import android.util.Log
 import com.giniapps.weather.data.util.GeocoderUtil
 import com.giniapps.weather.data.models.Location
 import com.giniapps.weather.data.models.WeatherDetails
@@ -28,11 +29,15 @@ class RemoteDataSource(
         var result: WeatherDetails? = null
         val job = scope.launch(Dispatchers.IO) {
             if (NetworkUtil.isNetworkAvailable(context) == NetworkUtil.ConnectionStatus.Connected) {
-                val response = client
-                    .getWeatherFromLocation(Headers, lat, lng)
-                    .execute()
-                response.body()?.let {
-                    result = getWeatherDetailsFromApiResponse(it)
+                try {
+                    val response = client
+                        .getWeatherFromLocation(Headers, lat, lng)
+                        .execute()
+                    response.body()?.let {
+                        result = getWeatherDetailsFromApiResponse(it)
+                    }
+                } catch (e: Exception) {
+                    e.printStackTrace()
                 }
             }
         }
